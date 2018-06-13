@@ -1,0 +1,9 @@
+﻿
+    <button type="button" class="btn btn-default" style="position:absolute; top:1%; left:1%;" ng-click="clickHandler($event)">
+        <span class="glyphicon glyphicon-camera" aria-hidden="false"> </span>
+    </button>
+    &nbsp;
+    &nbsp;
+    <svg class="regionCaptureDraggable" style="top:0px;left:0px;" height="210" width="210" ng-style='{"z-index":zIndex , "position":"absolute"}' ng-show="regionCapture.visible">
+        <rect x="5" y="5" height="200" width="200" style="fill:rgb(192,192,192);fill-opacity:0.1;stroke-width:5;stroke:rgba(128,128,128,255)"></rect>
+    </svg>

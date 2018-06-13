@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "TechmerVision";
+}
+@*
+    <div class="fullheight">
+        <img class="center-block text-center" src="~/images/TechmerVisionLogo-md.png" />
+        <h2 class="text-center">Click Login or Register to begin.</h2>
+    </div>
+
+
+*@
+    
+
+<div class="row row-centered">
+    <img class="center-block text-center  img-responsive" src="~/images/TechmerVisionLogo-md.png" />
+    <h1>Sign-Up for a TechmerVision Demo</h1>
+
+    <div class="col-md-6 col-md-offset-3">
+        <p class="center-block text-center">TechmerVision is a unique web-based design tool, developed by Techmer PM, to enable designers and engineers within all parts of the supply chain to communicate, collaborate, and innovate with the creation and application of new colors. </p>
+        <p class="center-block text-center">Please complete the form below and we will reach out to schedule a demo of the TechmerVision application. In addition, we will email you TechmerVision news and updates as they become available.</p>
+        <div class="indicates-required"><span class="asterisk">*</span> Required Field</div>
+    </div>
+</div>
+<form class="form-horizontal" action="https://techmerpm.us10.list-manage.com/subscribe/post" method="POST" name="form1" ng-app="notifyReg"  ng-controller="validateCtrl">
+    <input type="hidden" name="u" value="8b41bf463341f59b7cbb2bc6d">
+    <input type="hidden" name="id" value="62b3454adc">
+
+
+    
+    @Html.ValidationSummary("", new { @class = "text-danger text-center" })
+    <div class="row row-centered">
+        <div class="form-group col-lg-4 col-centered">
+            <div class="col-md-4 control-label">
+                <label for="MERGE1" class="control-label">First Name <span class="req asterisk">*</span></label>
+            </div>
+            <div class="col-md-8 field-group">
+                <input type="text" name="MERGE1" id="MERGE1" size="25" value="" required class="form-control" ng-model="fName">
+            </div>
+        </div>
+    </div>
+    <div class="row row-centered">
+        <div class="form-group col-lg-4 col-centered">
+            <div class="col-md-4 control-label">
+                <label for="MERGE2">Last Name <span class="req asterisk">*</span></label>
+            </div>
+            <div class="col-md-8 field-group">
+                <input type="text" name="MERGE2" id="MERGE2" size="25" value="" required class="form-control" ng-model="lName">
+            </div>
+        </div>
+    </div>
+    <div class="row row-centered">
+        <div class="form-group col-lg-4 col-centered">
+            <div class="col-md-4 control-label">
+                <label for="MERGE3">Company Name</label>
+            </div>
+            <div class="col-md-8 field-group">
+                <input type="text" name="MERGE3" id="MERGE3" size="25" value="" class="form-control" ng-model="cName">
+            </div>
+        </div>
+    </div>
+    <div class="row row-centered">
+        <div class="form-group col-lg-4 col-centered">
+            <div class="col-md-4 control-label">
+                <label for="MERGE0">Email Address <span class="asterisk">*</span></label>
+            </div>
+            <div class="col-md-8 field-group">
+                <input type="email" autocapitalize="off" autocorrect="off" name="MERGE0" id="MERGE0" size="25" value="" class="form-control" ng-model="eMail">
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-group center-block text-center">
+        <input type="submit" class="btn btn-default" value="Sign Up" 
+            ng-disabled="!form1.MERGE1.$dirty || !form1.MERGE2.$dirty || !form1.MERGE0.$dirty" />
+    </div>
+</form>

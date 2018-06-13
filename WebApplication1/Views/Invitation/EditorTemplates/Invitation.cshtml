@@ -1,0 +1,45 @@
+﻿@model TechmerVision.Models.Invitation
+
+<tr>
+    <td>
+        @Html.HiddenFor(i => i.id)
+        @Html.HiddenFor(i => i.password)
+        @Html.HiddenFor(i => i.FirstName)       
+        @Html.DisplayFor(i => i.FirstName)
+    </td>
+    <td>
+        @Html.HiddenFor(i => i.LastName)
+        @Html.DisplayFor(i => i.LastName)
+    </td>
+    <td>
+        @Html.DisplayFor(i => i.email)
+        @Html.HiddenFor(i => i.email)
+    </td>
+    <td>
+        @Html.DisplayFor(i => i.CompanyName)
+        @Html.HiddenFor(i => i.CompanyName)
+    </td>
+    <td>
+        @Html.DisplayFor(i => i.Title)
+        @Html.HiddenFor(i => i.Title)
+    </td>
+    <td>
+        @Html.DisplayFor(i => i.Phone)
+        @Html.HiddenFor(i => i.Phone)
+
+    </td>
+    <td>
+        @Html.DisplayFor(i => i.DesignRole)
+        @Html.HiddenFor(i => i.DesignRole)
+    </td>
+    <td>
+        @Html.DisplayFor(i => i.Website)
+        @Html.HiddenFor(i => i.Website)
+    </td>
+    <td>
+        @Html.DisplayFor(i => i.status)
+    </td>
+    <td>
+        @Html.EnumDropDownListFor(i => i.status)
+    </td>
+</tr>

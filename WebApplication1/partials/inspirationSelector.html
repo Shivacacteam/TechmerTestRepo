@@ -1,0 +1,105 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">Select an inspiration</h3>
+</div>
+<div class="modal-body">
+    
+    <div class="row" style="height:100%;">
+        <!--Preview Panel-->
+        <div class="col-sm-4">
+            <!--Image Preview-->
+            <div class="col-xs-12" style="height:90%; min-height:100px">
+                <img class="thumbnail img-responsive" ng-src="{{selected.image}}" />
+            </div>
+            <!--./Image Preview-->
+            <!--Ok Button-->
+            <div class="col-xs-3 col-xs-offset-3">
+                <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            </div> 
+            <!--./Ok Button-->
+            
+            <!--Cancel Button-->
+            <div class="col-xs-3">
+                <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+            </div> 
+            <!--./Cancel Button-->
+        </div>
+        <!--./Preview Panel-->
+        <!--ImageSelector-->
+        <div class="col-sm-8">
+            <div>
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#library">Library</a></li>
+                    <li><a data-toggle="tab" href="#upload">Upload</a></li>
+                    <!--
+            <li><a data-toggle="tab" href="#facebook">Facebook</a></li>
+            <li><a data-toggle="tab" href="#instagram">Instagram</a></li>
+            <li><a data-toggle="tab" href="#google">Google</a></li>
+            <li><a data-toggle="tab" href="#imageUrl">URL</a></li>
+            -->
+                </ul>
+
+                <div class="tab-content">
+                    <div id="library" class="tab-pane fade in active">
+                        <inspiration-provider-techmer selected="selected"></inspiration-provider-techmer>
+                    </div>
+                    <div id="upload" class="tab-pane fade">
+                        <inspiration-provider-upload selected="selected"></inspiration-provider-upload>
+                    </div>
+                    <!--
+            <div id="facebook" class="tab-pane fade">
+                <h3>Facebook</h3>
+                <button ng-click="connectToFacebook()">Connect To Facebook</button>
+                <nav class="pager">
+                    <ul>
+                        <li><a ng-click="previous()">Previous</a></li>
+                        <li><a ng-click="next()">Next</a></li>
+                    </ul>
+                </nav>
+                <div class="row">
+                    <div class="col-lg-3" ng-repeat="image in facebook.data">
+                        <div class="thumbnail">
+                            <img class="img-responsive" ng-src="{{image.picture}}" style="height:100px"
+                                 ng-click="$event.preventDefault(); selected.image = image" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="instagram" class="tab-pane fade">
+                <h3>Instagram</h3>
+                <button ng-click="connectToInstagram()">Connect To Instagram</button>
+                <nav class="pager">
+                    <ul>
+                        <li><a ng-click="previous()">Previous</a></li>
+                        <li><a ng-click="next()">Next</a></li>
+                    </ul>
+                </nav>
+                <div class="row">
+                    <div class="col-lg-3" ng-repeat="image in instagram.data">
+                        <div class="thumbnail">
+                            <img class="img-responsive" ng-src="{{image.images.thumbnail.url}}" style="height:100px"
+                                 ng-click="$event.preventDefault(); selected.image = image" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="google" class="tab-pane fade">
+                <inspiration-provider-google></inspiration-provider-google>
+
+            </div>
+            <div id="imageUrl" class="tab-pane fade">
+                <h3>URL</h3>
+                <p>Display images from a URL.</p>
+            </div>
+            -->
+                </div>
+            </div>
+        </div>
+        <!--./ImageSelector-->
+    </div> <!--./Row-->
+</div>
+<!--
+<div class="modal-footer">
+    
+    
+</div>
+-->

@@ -1,0 +1,70 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">Select a product</h3>
+</div>
+<div class="modal-body">
+    <div class="row" style="height: 100%;">
+        <!--Preview Panel-->
+        <div class="col-sm-4">
+            <!--Image Preview-->
+            <div class="col-xs-12" style="min-height: 100px">
+             
+                <img class="thumbnail img-responsive" style="max-height: 400px;" ng-src="{{selected.productTemplate.hasBackgroundImage && selected.productTemplate.backgroundImage || selected.productTemplate.image}}" />
+            </div>
+            <!--./Image Preview-->
+            <!--Ok Button-->
+            <div class="col-xs-3 col-xs-offset-3" ng-if="!IsShared">
+                <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            </div>
+            <!-- <div class="col-xs-3 col-xs-offset-3" ng-if="IsUpload">
+                <button class="btn btn-primary" type="button" ng-click="UploadImage()">Upload</button>
+            </div>-->
+            
+            <!--./Ok Button-->
+
+            <div class="col-xs-3 col-xs-offset-3" ng-if="IsShared">
+                <button class="btn btn-primary" type="button" ng-click="shareProduct($event)">Share</button>
+            </div>
+            <!--Cancel Button-->
+            <div class="col-xs-3">
+                <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+            </div>
+            <!--./Cancel Button-->
+        </div>
+        <!--./Preview Panel-->
+        <!--ImageSelector-->
+        <!--<div class="col-sm-8">
+            <gallery-selector items="productTemplates" select-method="selectProduct" />
+            
+        </div>-->
+
+        <div class="col-sm-8">
+            <uib-tabset class="tabbable">
+        <uib-tab heading="Techmer" ng-attr-active="tabs[0].active" select = "tabSelected('Techmer')">
+            <div class="">
+                 <gallery-selector items="productTemplates" select-method="selectProduct" />
+            </div>
+        </uib-tab>
+        <uib-tab heading="Personal" ng-attr-active="tabs[1].active" select = "tabSelected('Personal')">
+            <div class="">
+                <gallery-selector items="personalTemplates" select-method="selectPersonalProduct" />
+            </div>
+        </uib-tab>
+        <uib-tab heading="Shared with me" ng-attr-active="tabs[2].active" select = "tabSelected('Shared')">
+            <div class="">
+                <gallery-selector items="sharingTemplates" select-method="selectProduct" />
+            </div>
+        </uib-tab>
+        <!--  <uib-tab heading="Upload" ng-attr-active="tabs[3].active" select = "tabSelected('Upload')">
+            <div class="" id="upload">
+                 <p>Select an inspirational photo from your device.</p>
+                   <form name="form">
+                     <formgroup>
+                         <div class="btn btn-primary" ngf-select="Selectedfile($file)" ng-model="file" name="file" ngf-pattern="'image/*'" ngf-accept="'image/*'">Select</div>
+                    </formgroup>
+                   </form> 
+            </div>
+        </uib-tab>-->
+    </uib-tabset>
+        </div>
+    </div>
+</div>

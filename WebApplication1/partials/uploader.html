@@ -1,0 +1,24 @@
+    <uib-accordion-group is-Open="isOpen">
+        <uib-accordion-heading>
+            <span>Inspiration</span>
+            <img ng-src="{{Workspace.image}}" style="max-height:25px; max-width: 25px" class="pull-right"/>
+        </uib-accordion-heading>
+        <div class="text-center clearfix">
+            <div class="btn-group" style="padding-bottom: 5px;">
+                <span class="btn btn-primary" ng-click="selectInspiration($event)" >Select Inspiration</span>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clear Workspace<span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a ng-click="clearWorkspace()">Clear Workspace</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="thumbnail width-50 height-50 text-center center-block" ng-show="!currentWorkspace.image">
+                <img src="/images/placeholder.png">
+            </div>
+            <div class="text-center center-block" ng-show="currentWorkspace.image">
+                <img class="thumbnail inspiration img-responsive" style="display:inline-block" ng-src="{{currentWorkspace.image}}" ng-show="currentWorkspace.image">
+            </div>
+        </div>
+    </uib-accordion-group>
+

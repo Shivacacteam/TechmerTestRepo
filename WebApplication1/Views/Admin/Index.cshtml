@@ -1,0 +1,33 @@
+﻿<h1>Admin</h1>
+<ul>
+    @if (User.IsInRole("SysAdmin") | User.IsInRole("AppAdmin"))
+    {
+        <li>
+            @Html.ActionLink("Access Requests", "Index", "Invitation")
+        </li>
+    }
+    @if (User.IsInRole("SysAdmin") | User.IsInRole("AppAdmin"))
+    {
+        <li>
+            @Html.ActionLink("Users", "Index", "User")
+        </li>
+    }
+    @if (User.IsInRole("SysAdmin"))
+    {
+        <li>
+            @Html.ActionLink("Roles", "Index", "Roles")
+        </li>
+    }
+    @if (User.IsInRole("SysAdmin") | User.IsInRole("AppAdmin"))
+    {
+        <li>
+            @Html.ActionLink("Insipration Library", "Index", "InspirationLibrary")
+        </li>
+    }
+    @if (User.IsInRole("SysAdmin"))
+    {
+        <li>
+            @Html.ActionLink("Product Templates", "Index", "AdminProductTemplates")
+        </li>
+    }
+</ul>

@@ -1,0 +1,14 @@
+﻿<uib-accordion-group heading="Favorite Colors" is-open="isOpen">
+    <div class="row text-center">
+        <div class="colorSelection colorSelectionPad colorDraggable colorTapable colorFavoriteDrop"
+             style="width:33%: margin:0% 1% 0% 1%; display:inline-block"
+             data-color="{{favColor.colorData}}"
+             data-index="{{$index}}"
+             popover-trigger="mouseenter" popover="{{favColor.colorString}}" popover-popup-delay="5000"
+             ng-dblclick="deleteFavoriteColor(favColor)"
+             ng-click="setSamplerequest(favColor)"
+             ng-repeat="favColor in favoriteColors"
+             ng-style="{'background-color': favColor.colorStyle}">
+        </div>
+    </div>
+</uib-accordion-group>

@@ -1,0 +1,12 @@
+
+<uib-accordion-group  is-open="isOpen">
+    <uib-accordion-heading>
+        <span>Pixelation</span>
+    </uib-accordion-heading>
+    <div class="clearfix text-center">
+        <div class="col-xs-12">
+            <rzslider class="center-block" rz-slider-model="currentWorkspace.pixelation" rz-slider-options="pixelationOptions"></rzslider>
+            <canvas id="pixCan" class="pixelator" ng-click="getClickColor($event)"></canvas>
+        </div>
+    </div>
+</uib-accordion-group>

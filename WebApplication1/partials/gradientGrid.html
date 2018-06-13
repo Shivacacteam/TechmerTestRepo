@@ -1,0 +1,69 @@
+<uib-accordion-group is-open="isOpen">
+    <uib-accordion-heading>
+        <span>Color Grid</span>
+        <img class="pull-right" ng-src="{{CurrentGrid.image}}" style="max-width:25px;max-height:25px;"/>
+    </uib-accordion-heading>
+        <div class="col-xs-12 text-center" style="padding-bottom:5px;">
+            <div class="btn-group">
+                <span class="btn btn-primary btn-responsive" ng-click="newGrid()">New Grid</span>
+                <span class="btn btn-primary btn-responsive" ng-click="copyGrid(CurrentGrid)">Copy</span>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary btn-responsive dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Clear <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a ng-click="clearGrid(CurrentGrid)">Clear Grid</a></li>
+                    </ul>
+                </div>
+                <span class="btn btn-primary btn-responsive" ng-click="exportGrid($event)">Download</span>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary btn-responsive dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Shape <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a ng-click="setShape(0)">Square</a></li>
+                        <li><a ng-click="setShape(50)">Circle</a></li>
+                    </ul>
+                </div>
+                <span class="btn btn-primary btn-responsive" ng-click="showAllClickHandler()">Show All</span>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="horizontalWeight">
+                <rzslider class="center-block" rz-slider-model="CurrentGrid.spacing" rz-slider-options="gridSpacingOptions" style="max-width:550px"></rzslider>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            
+            <table style="margin:auto;">
+                <tr>
+                    <td>
+                        <rzslider class="center-block" rz-slider-model="CurrentGrid.horizontalWeightView" rz-slider-options="gridHorizontalWeightOptions"></rzslider>
+                    </td>
+                </tr>
+                <tr style="height:100%;">
+                    <td>
+                        
+                        <div class="clearfix noPad gradientGrid gradient-margin text-center center-block inlineBlock" id="gradientGrid">
+                            <div ng-repeat="row in CurrentGrid.gridArray" class="noPad" style="width:100%">
+                                <div class="gradient gradient-margin" ng-repeat="cell in row" ng-style="{'padding': CurrentGrid.spacing + 'px'}">
+                                    <div class="gradient-border colorCellTap colorDraggable" style="height:100%; width:100%;"
+                                         ng-style="{'background-color': cell.colorStyle , 'border-radius': CurrentGrid.borderRadius + '%'}"
+                                         data-color="{{cell.colorData}}"
+                                         ng-click="getGrid(row)"
+                                         ng-class="{colorCellDrop: cell.paintable}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td style="height:100%;">
+                        <!--<div class="inlineBlock" style="display:inline-block;height:100%" >-->
+                        <rzslider class="center-block vertSlider" rz-slider-model="CurrentGrid.verticalWeightView" rz-slider-options="gridVerticalWeightOptions"></rzslider>
+                        <!--</div>-->
+                    </td>
+                </tr>
+            </table>
+            
+        </div>
+</uib-accordion-group>

@@ -1,0 +1,25 @@
+﻿@model TechmerVision.Models.ProductTemplateColor
+
+
+
+<tr>
+    <td>
+        @Html.DisplayFor(i => i.Id)
+        @Html.HiddenFor(i => i.ProductTemplateId)
+        @Html.HiddenFor(i => i.InternalColorString)
+    </td>
+    <td>
+        <img src="@Model.Image" class="img-responsive" style="max-width:300px" />
+
+    </td>
+    <td>
+        @Html.DisplayFor(i => i.InternalColorString) 
+    </td>
+    <td>
+        @Html.DisplayFor(i => i.ColorNumber)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", "AdminProductTemplateColors", new { id = Model.Id }, null)
+    </td>
+</tr>
+

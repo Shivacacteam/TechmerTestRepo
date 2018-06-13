@@ -1,0 +1,72 @@
+﻿@model TechmerVision.Models.ProductTemplate
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ProductTemplate</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            <img src="@Model.Image" class="img-responsive" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HasBackgroundImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HasBackgroundImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BackgroundImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BackgroundImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumColors)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumColors)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Active)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Active)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

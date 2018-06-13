@@ -1,0 +1,72 @@
+﻿@model TechmerVision.Models.ProductTemplateColor
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ProductTemplateColor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductTemplate.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductTemplate.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ColorNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ColorNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InternalColorString)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InternalColorString)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecolorToleranceUpperLimit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecolorToleranceUpperLimit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecolorToleranceLowerLimit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecolorToleranceLowerLimit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            <img src="@Model.Image" class="img-responsive" />
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to Product Template", "Details", "AdminProductTemplates", new { id = this.Request.Params["productTemplateId"] }, null)
+        </div>
+    }
+</div>

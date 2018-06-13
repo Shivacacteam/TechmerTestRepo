@@ -1,0 +1,12 @@
+namespace TechmerVision.Areas.HelpPage.ModelDescriptions
+{
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    /// <summary>   Description of the dictionary model. </summary>
+    ///
+    /// <remarks>   Aedmonds, 8/25/2017. </remarks>
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public class DictionaryModelDescription : KeyValuePairModelDescription
+    {
+    }
+}

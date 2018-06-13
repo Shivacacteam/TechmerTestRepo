@@ -1,0 +1,24 @@
+<uib-accordion-group is-open="isOpen">
+    <uib-accordion-heading>
+        <span>Product Visualization</span>
+    </uib-accordion-heading>
+
+    <div class="row">
+        <div class="col-xs-3">
+            <span>Colors: </span>
+        </div>
+        <div class="colorSelection col-xs-1 reColorCellDrop colorDraggable reColorCellTap" 
+             data-color="{{color.colorData}}"
+             data-index="{{$index}}"
+             ng-style="{'background-color': 'rgba(' + color.colorData + ')'}"
+             ng-repeat="color in CurrentProduct.productColors"></div>
+    </div>
+    <div >
+        <img class="recolorPreview" ng-src="{{CurrentProduct.image}}" />
+    </div>
+
+    <canvas id="recolor" class="recolor hide">
+
+    </canvas>
+</uib-accordion-group>
+

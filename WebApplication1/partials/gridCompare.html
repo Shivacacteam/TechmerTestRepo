@@ -1,0 +1,8 @@
+﻿<div id="gridCompareContainer" class="fullheight gridCompareContainer clearfix" style="">
+    <div ng-repeat="asset in visibleAssets" style="position:absolute;top:0;left:0;">
+        <img class="gridCompareDraggable" width="200px"
+             ng-click="assetClicked($event, asset)"
+             ng-src="{{asset.image}}" ng-style='asset.style'
+             ng-show="asset.compareVisible" />
+    </div>
+</div>

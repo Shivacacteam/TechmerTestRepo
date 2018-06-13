@@ -1,0 +1,137 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">Sharing Details
+    <span class="col-xs-3 pull-right">
+        <button class="btn btn-danger pull-right" type="button" ng-click="cancel()">Cancel</button>
+    </span></h3>
+</div>
+
+<div class="modal-body ">
+    <div class="row">
+        <div class="col-sm-12" id="SampleRequest"></div>
+
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <uib-accordion>
+            <uib-accordion-group heading="Sample Request" is-open="isOpen">
+               <!-- <uib-accordion-group heading="Sample Request">-->
+        <div class="col-sm-12">
+         <form role="form" class="form-horizontal ng-pristine ng-valid" name="requestModel">
+            <div class="form-group mt-3">
+                <label class="col-sm-4 control-label">Project Name: <b class="text-danger"> &nbsp;*</b></label>
+                <div class="col-sm-7">
+                    <input type="text" class="form-control" id="Name" name="name" ng-model="SampleRequestData.projectName"  required/>
+                    <span class="text-danger" ng-show="requestModel.name.$touched && requestModel.name.$invalid ">Please enter project name first</span>
+                </div>
+            </div>
+            <div class="form-group mt-3">
+                <label class="col-sm-4 mt-3 control-label">Notes: </label>
+                <div class="col-sm-7 mt-3">
+                    <input type="text" class="form-control" name="notes" ng-model="SampleRequestData.notes" />
+                </div>
+            </div>
+        
+    <!-- <div ng-repeat="product in Products">-->
+    <table class="table table-condensed table-responsive">
+        <thead>
+            <tr>
+                <th>Remove</th>
+                <th>Thumbnail</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="product in SelectedProduct">
+                <td ng-click="deleteSampleRequestAsset(product)"><a class="pointer">Remove</a></td>
+                 <td><span ng-if="product.assetType=='Product'"><img class="productLibraryThumbnail" ng-src="{{product.assetbackground}}" /></span>
+                     <span ng-if="product.assetType=='Grid'"><img class="productLibraryThumbnail sb-1px-ccc" ng-src="{{product.assetbackground}}" /></span>
+                <span ng-if="product.assetType=='Color'"><div class="colorSelection colorSelectionPad colorDraggable colorTapable colorFavoriteDrop"
+                     style  ="width:33%: margin:0% 1% 0% 1%; display:inline-block"
+                     data-color="{{favColor.colorData}}"
+                     data-index="{{$index}}"
+                     ng-style="{'background-color': product.assetbackground}">
+                  </div></span></td>
+                 <td> <span>{{product.assetTitle}}</span></td>
+            </tr>
+        </tbody>
+    </table>
+                <div class="row">
+                <!--Ok Button-->
+                <div class="col-xs-4 col-xs-offset-2">
+                    <button class="btn btn-primary" id="btnAddRequest" type="button" ng-disabled="button.disabled" ng-click="requestModel.$valid && addRequest()">Submit Project</button>
+                </div>
+                <div class="col-xs-4">
+                    <button class="btn btn-warning" type="button" ng-click="deleteSampleRequest()">Delete Project</button>
+                </div>
+                <!--./Cancel Button-->
+            </div>
+              </form>
+    </div>
+ <!-- </uib-accordion-group>-->
+    </uib-accordion-group>
+
+</uib-accordion>
+        </div>
+
+
+        <div class="col-sm-2 text-center">
+            <uib-accordion header="Favorite Colors" close-others="false">
+              <favorite-Colors></favorite-Colors>
+                  </uib-accordion>
+        </div>
+
+        <div class="col-sm-6">
+            <uib-accordion heading="Product List" close-others="false">
+        <product-list></product-list>
+            </uib-accordion>
+            <uib-accordion header="" close-others="false">
+            <!-- <gradient-grid></gradient-grid>-->
+             <request-grid></request-grid>
+                       <!-- <grid-palette ></grid-palette>-->
+            </uib-accordion>
+        </div>
+
+    </div>
+
+
+
+
+
+</div>
+
+<!--    <div class="row" ng-if="Products !=''">
+            <div ng-repeat="product in Products">
+             <div class="col-sm-4">
+                <span class="btn btn-primary" ng-click="deleteProductLibraryProduct(product)">Delete</span>
+            </div>
+            <div class="col-sm-4">
+                <img class="productLibraryThumbnail" ng-src="{{product.image}}" ng-click="selectProduct(product)" />
+            </div>
+            <div class="hidden-xs hidden-sm col-sm-4">
+                <span ng-click="selectProduct(product)">{{product.title}}</span>
+                
+            </div>
+                </div>
+        </div>
+     <div class="row" ng-if="BaseColors !=''">
+          <div ng-repeat="favColor in BaseColors">
+             <div class="col-sm-4">
+                <span class="btn btn-primary" ng-click="deleteProductLibraryProduct(favColor)">Delete</span>
+            </div>
+            <div class="col-sm-4">
+               
+        <div class="colorSelection colorSelectionPad colorDraggable colorTapable colorFavoriteDrop"
+             style="width:33%: margin:0% 1% 0% 1%; display:inline-block"
+             data-color="{{favColor.colorData}}"
+             data-index="{{$index}}"
+             ng-style="{'background-color': favColor.colorStyle}">
+        </div>
+            </div>
+            <div class="hidden-xs hidden-sm col-sm-4">
+                <span>{{favColor.title}}</span>
+            </div>
+           </div>
+        </div>-->
+
+
+

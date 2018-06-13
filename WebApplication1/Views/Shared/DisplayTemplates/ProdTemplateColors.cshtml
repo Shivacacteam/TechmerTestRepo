@@ -1,0 +1,22 @@
+﻿@model IEnumerable<TechmerVision.Models.ProductTemplateColor>
+
+
+<div class="table-responsive">
+<table class="table table-striped table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(i => i.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(i => i.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(i => i.ColorData)
+        </th>
+        <th>
+
+        </th>
+    </tr>
+    @Html.DisplayForModel()
+</table>
+</div>
