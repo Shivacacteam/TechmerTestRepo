@@ -1,0 +1,484 @@
+.regionCaptureDraggable {
+    touch-action: none;
+}
+.colorDraggable {
+    touch-action: none;
+}
+.gridCompareDraggable{
+    touch-action:none;
+}
+.productTemplate{
+    height:150px;
+}
+
+.productTemplateTitle{
+    font-size:small
+}
+
+.productTemplateThumbnail{
+    max-width:100%;
+    height:auto;
+}
+
+.x2{
+        /*transform: scale(2,2);*/
+        transform: scale(3,3);
+}
+btn.primary{
+    background-color: rgb(0,75,132)
+}
+a.logoButton{
+    background: url(../images/TechmerVisionLogo-sm.png) no-repeat left;
+    display: block;
+    width: 100px;
+    height: 48px;
+    text-indent:-9999px; /*hides link text*/
+}
+
+.dropzone {
+  background-color: #ccc;
+  border: dashed 4px transparent;
+  border-radius: 4px;
+  margin: 10px auto 30px;
+  padding: 10px;
+  width: 80%;
+  transition: background-color 0.3s;
+}
+
+.drop-active {
+  border-color: #aaa;
+}
+
+.drop-target {
+  background-color: #29e;
+  border-color: #fff;
+  border-style: solid;
+}
+
+.drag-drop {
+  display: inline-block;
+  min-width: 40px;
+  padding: 2em 0.5em;
+
+  color: #fff;
+  background-color: #29e;
+  border: solid 2px #fff;
+
+  -webkit-transform: translate(0px, 0px);
+          transform: translate(0px, 0px);
+
+  transition: background-color 0.3s;
+}
+
+.drag-drop.can-drop {
+  color: #000;
+  background-color: #4e4;
+}
+
+ html {
+    overflow-x: hidden;
+    height:100vh;
+
+}
+ body {
+    min-height: 100vh;
+    
+ }
+ .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+ .navbar{
+     background: #ad923c;
+ }
+ .navbar-inverse .navbar-nav > li > a {
+  color:cornsilk;
+}
+.navbar-inverse .navbar-brand,
+.navbar-nav > li > a {
+  color:cornsilk;
+}
+
+.asterisk{
+	color:#cc6600;
+	font-size:20px;
+}
+
+ .fullheight {
+     position:relative;
+     min-height: 100vh !important;
+ }
+
+ 
+ .pixelate{
+    image-rendering: optimizeSpeed;
+    image-rendering: -webkit-crisp-edges; /*Safari 7+*/
+    image-rendering: -webkit-optimize-contrast; /*Safari 6, UC Browser 9.9*/
+    image-rendering: optimize-contrast;
+    image-rendering: pixelated; /*Chrome 41+ and Opera 26+*/
+    -ms-interpolation-mode: nearest-neighbor; /*IE 7+ (non-standard property)*/
+ }
+
+canvas.pixelator {
+  image-rendering: optimizeSpeed;
+  image-rendering: -webkit-crisp-edges; /*Safari 7+*/
+  image-rendering: -webkit-optimize-contrast; /*Safari 6, UC Browser 9.9*/
+  image-rendering: optimize-contrast;
+  image-rendering: pixelated; /*Chrome 41+ and Opera 26+*/
+  -ms-interpolation-mode: nearest-neighbor; /*IE 7+ (non-standard property)*/
+  width: 100%;
+}
+
+.width-50{
+   Max-width: 50%;
+}
+
+.inspiration{
+    width: auto;
+    max-height: 160px;
+}
+
+.inlineBlock{
+    display:inline-block;
+}
+
+.tooltip-inner  {
+    white-space:pre; 
+    max-width:none;
+    text-align: left;
+}
+
+.gradientGrid{
+    max-width: 550px;
+    min-width: 500px;
+}
+
+input[type=range].vertical {
+    writing-mode: bt-lr;
+    -webkit-appearance: slider-vertical;
+    -moz-appearance: slider-vertical;
+    width: 20px;
+    height: 537px;
+    display: inline-block;
+    float: left;
+    top: -10px;
+    position: relative;
+    margin-left:5px;
+}
+
+input[type=range].horizontalWeight{
+    width: 550px;
+    max-width:550px;
+    padding-left:0px;
+}
+
+.displayTableCell{
+    display:table-cell;
+    vertical-align: middle;
+    padding-right: 5px;
+}
+
+.gradient {
+    height:50px;
+    width:50px;
+    float:left;
+    
+}
+
+.gradient-border{
+    border-style:solid;
+    border-width:1px;
+    border-color: #000;
+}
+
+gradient-margin{
+    margin:2px;
+}
+
+.gradientCircle{
+    -webkit-border-radius: 100%;
+    -moz-border-radius:100%;
+    border-radius: 100%;
+}
+
+.noPad{
+    padding: 0px;
+}
+
+div.colorSelection{
+    border:1px solid #000;
+    height:50px;
+    width:50px;
+    max-width:50px;
+}
+
+canvas.recolor{
+    width: 100%;
+}
+
+.recolorPreview{
+    max-height:550px;
+    max-width:550px;
+}
+
+.colorDragActive{
+    position:relative;
+    z-index:1000;
+}
+
+.GridMoving{
+    min-height: 100%;
+    height: 100%;
+}
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+
+.colorSelectionPad{
+   margin: 2px;
+}
+
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    /*text-align:left;*/
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
+.gridCompareContainer{
+    position:relative;
+    height: 100%;
+}
+gridCompareDraggable{
+    position:absolute;
+}
+
+.productLibraryThumbnail{
+    max-height:75px;
+    max-width:75px;
+    margin:2px;
+}
+
+.ng-pageslide {
+    background: #eee;
+}
+
+body.ng-pageslide-body-open::before {
+    content: '.';
+    display: block;
+    position: absolute;
+    top: 0;
+    background-color: rgb(0,0,0);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0.5;
+    transition: opacity 1s;
+}
+body.ng-pageslide-body-closed::before {
+    transition: opacity 1s;
+    opacity: 0;
+    content: '.';
+    display: block;
+    position: absolute;
+    top: 0;
+    background-color: rgb(0,0,0);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.vertSlider {
+    min-height: 550px;
+}
+
+.draggable .colorDraggable .gridCompareDraggable {
+    -ms-touch-action: none;
+        touch-action: none;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12{
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+@media screen and (max-width: 1440px) {
+    .colorSelection {
+        border: 1px solid #000;
+        height: 35px;
+        width: 35px;
+    }
+
+    .gradientGrid{
+        max-width: 350px;
+        min-width: 350px;
+    }
+
+    .gradient {
+        height: 35px;
+        width: 35px;
+        float: left;
+    }
+
+    input[type=range].vertical {
+        writing-mode: bt-lr;
+        -webkit-appearance: slider-vertical;
+        -moz-appearance: slider-vertical;
+        width: 20px;
+        height: 350px;
+        display: inline-block;
+        float: left;
+        top: -19px;
+        position: relative;
+    }
+
+    input[type=range].horizontalWeight {
+        width: 350px;
+    }
+
+    .well {
+        margin: 1px;
+    }
+
+    div.colorSelection {
+        border: 1px solid #000;
+        height: 35px;
+        width: 35px;
+        max-width: 35px;
+    }
+    .recolorPreview{
+    max-height:350px;
+    max-width:350px;
+    }
+
+    .vertSlider {
+        min-height: 335px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .colorSelection {
+        border: 1px solid #000;
+        height: 30px;
+        width: 30px;
+    }
+
+    .gradientGrid{
+        max-width: 329px;
+        min-width: 329px;
+    }
+
+    .gradient {
+        height: 30px;
+        width: 30px;
+        float: left;
+    }
+
+    input[type=range].vertical {
+        writing-mode: bt-lr;
+        -webkit-appearance: slider-vertical;
+        -moz-appearance: slider-vertical;
+        width: 15px;
+        height: 300px;
+        display: inline-block;
+        float: left;
+        top: -19px;
+        position: relative;
+    }
+
+    input[type=range].horizontalWeight {
+        width: 300px;
+    }
+
+    .well {
+        margin: 1px;
+    }
+
+    div.colorSelection {
+        border: 1px solid #000;
+        height: 30px;
+        width: 30px;
+        max-width: 30px;
+    }
+    .recolorPreview{
+        max-height:300px;
+        max-width:300px;
+    }
+    .vertSlider {
+        min-height: 300px;
+    }
+    .btn-responsive {
+        padding:4px 9px;
+        font-size:90%;
+        line-height: 1.2;
+    }
+}
+
+@media screen
+    and (max-width: 480px) 
+    and (orientation:portrait) {
+    .colorSelection{
+        border:1px solid #000;
+        height:23px;
+        width:23px;
+        max-width:30px;
+    }
+
+    .gradientGrid{
+        max-width: 230px;
+        min-width: 230px;
+    }
+    .gradient {
+        height:23px;
+        width:23px;
+        float:left;
+    }
+
+    input[type=range].vertical {
+        writing-mode: bt-lr;
+        -webkit-appearance: slider-vertical;
+        -moz-appearance: slider-vertical;
+        width: 20px;
+        height: 250px;
+        display: inline-block;
+        float: left;
+        top: -19px;
+        position: relative;
+    }
+    input[type=range].horizontalWeight{
+        width: 250px;
+        max-width:250px;
+    }
+    .well{
+        margin:2px;
+    }
+       
+    div.colorSelection{
+        border:1px solid #000;
+        height:23px;
+        width:23px;
+        max-width:23px;
+    } 
+    .recolorPreview{
+    max-height:280px;
+    max-width:280px;
+    }
+
+    .vertSlider {
+        min-height: 230px;
+    }
+
+    .btn-responsive {
+        padding:2px 4px;
+        font-size:80%;
+        line-height: 1;
+        border-radius:3px;
+    }
+}
+
+

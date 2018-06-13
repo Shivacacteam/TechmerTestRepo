@@ -1,0 +1,55 @@
+﻿<button type="button" class="btn btn-default" style="position:absolute; top:1%; left:75px;" ng-click="toggleAssetPanel($event)">
+    <span class="glyphicon glyphicon-plus" aria-hidden="false"> </span>
+</button>
+<button type="button" class="btn btn-default assetRemovalDrop" style="position:absolute; top:1%; left:125px;" ng-click="toggleAssetPanel($event)">
+    <span class="glyphicon glyphicon-minus" aria-hidden="false"> </span>
+</button>
+
+<div pageslide ps-open="showAssets" ps-side="{{slideDirection}}">
+    <div style="padding-top:20%;" class="text-center">
+        <p>
+            Assets:
+            <span class="btn btn-info pull-right" ng-click="toggleAssetPanel()">Close</span>
+        </p>
+        <hr />
+        <div style="overflow-y:scroll;position:absolute;height:85%;width:100%;">
+
+            <uib-accordion close-others="false">
+                <uib-accordion-group is-open="GridsOpen">
+                    <uib-accordion-heading>
+                        <span>Color Grids</span>
+                    </uib-accordion-heading>
+
+                    <div ng-repeat="Grid in Grids">
+                        <div class="row" style="margin:5px">
+                            <div class="col-xs-12 center-block">
+                                <img ng-src="{{Grid.image}}" width="100" ng-click="clickHandlerAsset($event, Grid)" />
+                                <span class="btn btn-primary" ng-click="deleteGrid($index)">Delete</span>
+                            </div>
+                        </div>
+                    </div>
+                </uib-accordion-group>
+                <uib-accordion-group is-open="IspirationOpen">
+                    <uib-accordion-heading>
+                        Inspiration
+                    </uib-accordion-heading>
+                    <div class="text-center center-block" ng-show="CurrentWorkspace.image">
+                        <img class="thumbnail inspiration" style="display:inline-block" 
+                             ng-src="{{CurrentWorkspace.image}}" ng-show="CurrentWorkspace.image" ng-click="clickHandlerAsset($event, CurrentWorkspace)">
+                    </div>
+                </uib-accordion-group>
+                <uib-accordion-group is-open="ProductsOpen">
+                    <uib-accordion-heading>
+                        <span>Product Library</span>
+                    </uib-accordion-heading>
+                    <div ng-repeat="product in Products">
+                        <div class="col-xs-12">
+                            <img class="productLibraryThumbnail" ng-src="{{product.image}}" ng-click="clickHandlerAsset($event, product)" />
+                            <span ng-click="clickHandlerAsset(product)">{{product.title}}</span>
+                        </div>
+                    </div>
+                </uib-accordion-group>
+            </uib-accordion>    
+        </div>
+    </div>
+</div>

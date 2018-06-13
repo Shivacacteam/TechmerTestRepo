@@ -1,0 +1,63 @@
+﻿@model IEnumerable<TechmerVision.Models.ProductTemplateColor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductTemplate.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ColorNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InternalColorString)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecolorToleranceUpperLimit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecolorToleranceLowerLimit)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProductTemplate.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ColorNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InternalColorString)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecolorToleranceUpperLimit)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecolorToleranceLowerLimit)
+        </td>
+        <td>
+            <img src="@item.Image" class="img-responsive" />
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

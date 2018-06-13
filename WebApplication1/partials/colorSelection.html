@@ -1,0 +1,40 @@
+
+<uib-accordion-group is-open="isOpen">
+    <uib-accordion-heading>
+        <span>Recent Colors:</span>
+        <div class="colorSelection colorDraggable colorSelectionDrop displayTableCell pull-right"
+             style="max-height:25px; max-width: 25px"
+             popover-trigger="mouseenter" popover="{{colorSelections[0].colorString}}" popover-popup-delay="5000"
+             data-color="{{colorSelections[0].colorData}}"
+             ng-style="{'background-color': colorSelections[0].colorStyle}"
+             ng-click="setSelectedColor(colorSelections[0].colorData)">
+        </div>
+    </uib-accordion-heading>
+
+    <div class="row center-block">
+        <div class="col-xs-6">
+            <span class="displayTableCell">Current:</span>
+            <color-provider color="selectedColor.colorData" workspace="currentWorkspace"></color-provider>
+        </div>
+        <div class="col-xs-6">
+            <div class="colorSelection colorDraggable colorSelectionDrop displayTableCell"
+                 data-color="{{colorSelections[0].colorData}}"
+                 ng-style="{'background-color': colorSelections[0].colorStyle}">
+            </div>
+        </div>
+    </div>
+    <hr />
+
+
+    <div class="row text-center">
+        <div class="colorSelection colorDraggable colorTapable colorSelectionPad"
+                data-color="{{recColor.colorData}}"
+                style="width:33%; margin:0% 1% 0% 1%; display:inline-block"
+                popover-trigger="mouseenter" popover="{{recColor.colorString}}" popover-popup-delay="5000"
+                ng-repeat="recColor in colorSelections"
+                ng-show="$index > 0"
+                ng-style="{'background-color': recColor.colorStyle}"
+                ng-click="setSelectedColor(recColor.colorData)">
+        </div>
+    </div>
+</uib-accordion-group>

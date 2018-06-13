@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechmerVision", "WebApplication1\TechmerVision.csproj", "{63CC0056-6F9F-4853-A301-19FEFB981669}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechmerVision.Tests", "WebApplication1.Tests\TechmerVision.Tests.csproj", "{7465B060-FAA9-4B3F-8B6A-1B0FE7F8ABC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechmerVisionManager", "AssetImageMover\TechmerVisionManager.csproj", "{D30156D7-C629-4A1B-B541-C2B07BEA0301}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{63CC0056-6F9F-4853-A301-19FEFB981669}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63CC0056-6F9F-4853-A301-19FEFB981669}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63CC0056-6F9F-4853-A301-19FEFB981669}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63CC0056-6F9F-4853-A301-19FEFB981669}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7465B060-FAA9-4B3F-8B6A-1B0FE7F8ABC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7465B060-FAA9-4B3F-8B6A-1B0FE7F8ABC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7465B060-FAA9-4B3F-8B6A-1B0FE7F8ABC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7465B060-FAA9-4B3F-8B6A-1B0FE7F8ABC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D30156D7-C629-4A1B-B541-C2B07BEA0301}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D30156D7-C629-4A1B-B541-C2B07BEA0301}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D30156D7-C629-4A1B-B541-C2B07BEA0301}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D30156D7-C629-4A1B-B541-C2B07BEA0301}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

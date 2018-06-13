@@ -1,0 +1,33 @@
+<uib-accordion-group is-open="isOpen">
+    <uib-accordion-heading>
+        <span>Color Grid</span>
+        <img class="pull-right" ng-src="{{CurrentGrid.image}}" style="max-width:25px;max-height:25px;"/>
+    </uib-accordion-heading>
+       
+     <div class="col-sm-12">
+         <div class="col-sm-4" ng-repeat="gridArray in Grids">
+              <img class="pull-right col-sm-12 P-0 sb-1px-ccc" ng-src="{{gridArray.image}}" ng-click="setGrid(gridArray)"/>
+         </div>
+
+        <!--    <table style="margin:auto;">
+                <tr style="height:100%;" ng-repeat="gridArray in Grids">
+                    <td>
+                        <!--<div class="clearfix noPad gradientGrid gradient-margin text-center center-block inlineBlock" id="gradientGrid">
+                            <div ng-repeat="row in gridArray" class="noPad" style="width:100%">
+                                <div class="gradient gradient-margin" ng-repeat="cell in row" ng-style="{'padding': CurrentGrid.spacing + 'px'}">
+                                    <div class="gradient-border colorCellTap colorDraggable" style="height:100%; width:100%;"
+                                         ng-style="{'background-color': cell.colorStyle , 'border-radius': CurrentGrid.borderRadius + '%'}"
+                                         data-color="{{cell.colorData}}"
+                                         ng-click="getGrid(row)"
+                                         ng-class="{colorCellDrop: cell.paintable}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <img class="pull-right" ng-src="{{gridArray.image}}" style="max-width:200px;max-height:200px;"/>
+                    </td>
+                </tr>
+            </table>-->
+            
+        </div>
+</uib-accordion-group>

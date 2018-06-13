@@ -1,0 +1,66 @@
+﻿@model TechmerVision.Models.ProductTemplateColor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProductTemplateColor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductTemplate.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductTemplate.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ColorNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ColorNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InternalColorString)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InternalColorString)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecolorToleranceUpperLimit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecolorToleranceUpperLimit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecolorToleranceLowerLimit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecolorToleranceLowerLimit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            <img src="@Model.Image" class="img-responsive" />
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to Product Template", "Details", "AdminProductTemplates", new { id = this.Request.Params["productTemplateId"] }, null)
+</p>

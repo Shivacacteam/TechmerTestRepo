@@ -1,0 +1,16 @@
+﻿<h3>Google</h3>
+<button ng-click="loadImages()">Connect To Drive</button>
+<nav class="pager">
+    <ul>
+        <li><a ng-click="previous()">Previous</a></li>
+        <li><a ng-click="next()">Next</a></li>
+    </ul>
+</nav>
+<div class="row">
+    <div class="col-lg-3" ng-repeat="image in data.files">
+        <div class="thumbnail">
+            <img class="img-responsive" ng-src="{{image.thumbnailLink}}" style="height:100px"
+                 ng-click="$event.preventDefault(); selected.image = image" />
+        </div>
+    </div>
+</div>

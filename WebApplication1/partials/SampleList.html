@@ -1,0 +1,26 @@
+﻿<uib-accordion-group heading="Sample Request" is-open="isOpen">
+   <button class="btn btn-primary btn-request" ng-href="#/request_Details" ng-click="requestDetails()">Add New</button>
+    <!-- <div ng-repeat="product in Products">-->
+    <table class="table table-condensed table-responsive">
+        <thead class="thead-light">
+            <tr>
+                <th style="min-width: 140px;">Name</th>
+                <th style="min-width: 240px;">Notes</th>
+                <th>Status</th>
+                 <th>Created Date</th>
+                  <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="product in SampleProducts">
+                <td>{{product.projectName}}</td>
+                 <td>{{product.notes}}</td>
+                 <td> <span>{{product.status ?"Submitted" : "Open"}}</span>
+                 </td>
+                 <td> <span>{{product.createdDate | date:'dd-MM-yyyy'}}</span></td>
+                 <td> <button class="btn btn-primary" ng-href="#/request_Details" ng-click="requestDetails(product)">View</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+</uib-accordion-group>

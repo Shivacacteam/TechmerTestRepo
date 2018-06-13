@@ -1,0 +1,26 @@
+﻿<uib-accordion-group heading="Product Library" is-open="isOpen">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="btn-group">
+                <span class="btn btn-primary btn-responsive" ng-click="addProduct($event)">New Product</span>
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div ng-repeat="product in Products">
+        <div class="row">
+            <div class="col-xs-6 col-md-4">
+                <img class="productLibraryThumbnail" ng-src="{{product.image}}" ng-click="selectProduct(product)" />
+            </div>
+            <div class="hidden-xs hidden-sm col-md-4 col-lg-4">
+                <span ng-click="selectProduct(product)">{{product.title}}</span>
+                
+            </div>
+            <div class="col-xs-6 col-md-4">
+                <!--<span class="btn btn-primary btn-responsive" ng-click="copyProduct(product)">Copy</span>-->
+                <span class="btn btn-primary" ng-click="deleteProductLibraryProduct(product)">Delete</span>
+            </div>
+        </div>
+    </div>
+
+</uib-accordion-group>

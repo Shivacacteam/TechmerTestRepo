@@ -1,0 +1,157 @@
+﻿<div style="min-width: 230px">
+    <!--<div class="col-xs-12">
+        <div class="col-xs-6">
+            Preview
+       
+        </div>
+       
+        </div>-->
+    <!--  ||'hsl('+hsv.Hue+', '+hsv.Saturation+'%,'+hsv.Value+'%)'||'hex' 
+               background-color: #ADFF2F;
+    background-color: hsl(120, 100%, 50%);-->
+
+    <form role="form" class="form-horizontal ng-pristine ng-valid" name="tblColor">
+        <div class="form-group mt-3">
+            <label class="col-sm-6">Color Space:</label>
+            <div class="col-sm-6">
+                <select class="form-control banner-input" id="StateSelected" ng-model="SelectedColor.ColorSpace">
+                    <option value="1">R.G.B</option>
+                    <option value="2">L.A.B</option>
+                    <option value="3">H.S.V</option>
+                    <option value="4">C.M.Y.K</option>
+                    <option value="5">Hex</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-sm-12 mt-3 P-0">
+            <div class="col-sm-8" ng-if="SelectedColor.ColorSpace=='1'">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">R:</label>
+                    <div class="col-sm-9">
+                        <input type="number" name="rgbred" class="form-control" min=0 max="255" maxlength="3" ng-model="rgb.red" oninput="validity.valid||(value='');" placeholder="0 – 255" ng-change="validity.valid && rgbToOthers(rgb);" />
+                        <span class="text-danger" ng-show="validity.valid">Range (0 – 255)</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">G:</label>
+                    <div class="col-sm-9">
+                        <input type="number" name="rgbgreen" class="form-control" min="0" max="255" ng-model="rgb.green" oninput="validity.valid||(value='');" placeholder="0 – 255" ng-change="validity.valid && rgbToOthers(rgb);" />
+                        <span class="text-danger" ng-show="tblColor.rgbgreen.$error.max">Range (0 – 255)</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">B:</label>
+                    <div class="col-sm-9">
+                        <input type="number" name="rgbblue" class="form-control" min="0" max="255" ng-model="rgb.blue" oninput="validity.valid||(value='');" placeholder="0 – 255" ng-change="validity.valid && rgbToOthers(rgb);" />
+                        <span class="text-danger" ng-show="tblColor.rgbblue.$error.max">Range (0 – 255)</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="col-sm-8" ng-if="SelectedColor.ColorSpace=='2'">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">L:</label>
+                    <div class="col-sm-9">
+                        <input type="number" name="labL" class="form-control" min="0" max="100" ng-model="lab.l" oninput="validity.valid||(value='');" placeholder="0 – 100" ng-change="validity.valid && labToOthers(lab);" />
+                        <span class="text-danger" ng-show="tblColor.labL.$error.max">Range (0 – 100)</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">A:</label>
+                    <div class="col-sm-9">
+                        <input type="number" name="labA" class="form-control" min="-128" max="128" ng-model="lab.a" ng-change="tblColor.labA.$valid && labToOthers(lab);" />
+                        <span class="text-danger" ng-show="tblColor.labA.$error.max">Range (-128 – 128)</span>
+                        <span class="text-danger" ng-show="tblColor.labA.$error.min">Range (-128 – 128)</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">B:</label>
+                    <div class="col-sm-9">
+                        <input type="number" name="labB" class="form-control" min="-128" max="128" ng-model="lab.b" ng-change="tblColor.labB.$valid && labToOthers(lab);" />
+                        <span class="text-danger" ng-show="tblColor.labB.$error.max">Range (-128 – 128)</span>
+                        <span class="text-danger" ng-show="tblColor.labB.$error.min">Range (-128 – 128)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-8" ng-if="SelectedColor.ColorSpace=='3'">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">H:</label>
+                    <div class="col-sm-9">
+                        <input type="number" name="hsvHue" class="form-control" min="0" max="360" ng-model="hsv.Hue" oninput="validity.valid||(value='');" placeholder="0 – 360" ng-change="validity.valid && hsvToOthers(hsv);" />
+                        <span class="text-danger" ng-show="validity.valid">Range (0 – 360)</span>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">S:</label>
+                    <div class="col-sm-9">
+                        <input type="number" name="hsvsaturation" class="form-control" min="0" max="100" ng-model="hsv.Saturation" oninput="validity.valid||(value='');" placeholder="0 – 100" ng-change="validity.valid && hsvToOthers(hsv);" />
+                        <span class="text-danger" ng-show="tblColor.hsvsaturation.$error.max">Range (0 – 100)</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">V:</label>
+                    <div class="col-sm-9">
+                        <input type="number" name="hsvvalue" class="form-control" min="0" max="100" ng-model="hsv.Value" oninput="validity.valid||(value='');" placeholder="0 – 100" ng-change="validity.valid && hsvToOthers(hsv);" />
+                        <span class="text-danger" ng-show="tblColor.hsvvalue.$error.max">Range (0 – 100)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-8" ng-if="SelectedColor.ColorSpace=='4'">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">C:</label>
+                    <div class="col-sm-9">
+                        <input type="number" name="cmykcyan" class="form-control" min="0" max="100" ng-model="cmyk.cyan" oninput="validity.valid||(value='');" placeholder="0 – 100" ng-change="validity.valid && cmykToOthers(cmyk);" />
+                        <span class="text-danger" ng-show="tblColor.cmykcyan.$error.max">Range (0 – 100)</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">M:</label>
+                    <div class="col-sm-9">
+                        <input type="number" name="cmykmagenta" class="form-control" min="0" max="100" ng-model="cmyk.magenta" oninput="validity.valid||(value='');" placeholder="0 – 100" ng-change="validity.valid && cmykToOthers(cmyk);" />
+                        <span class="text-danger" ng-show="tblColor.cmykmagenta.$error.max">Range (0 – 100)</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Y:</label>
+                    <div class="col-sm-9">
+                        <input type="number" name="cmykyellow" class="form-control" min="0" max="100" ng-model="cmyk.yellow" oninput="validity.valid||(value='');" placeholder="0 – 100" ng-change="validity.valid && cmykToOthers(cmyk);" />
+                        <span class="text-danger" ng-show="tblColor.cmykyellow.$error.max">Range (0 – 100)</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">K:</label>
+                    <div class="col-sm-9">
+                        <input type="number" name="cmykkey" class="form-control" min="0" max="100" ng-model="cmyk.key" oninput="validity.valid||(value='');" placeholder="0 – 100" ng-change="validity.valid && cmykToOthers(cmyk);" />
+                        <span class="text-danger" ng-show="tblColor.cmykkey.$error.max">Range (0 – 100)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-8" ng-if="SelectedColor.ColorSpace=='5'">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Hex:</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="hexcode" class="form-control" maxlength="7" ng-model="hex" pattern="^#+([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$" ng-change="tblColor.hexcode.$valid && hexToOthers(hex);" />
+                        <span class="text-danger" ng-show="tblColor.hexcode.$error.pattern">Pattern (#e9d3e8)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-3 pull-right">
+                <label class="col-sm-12">Preview</label>
+                <div class="col-xs-12 colorSelection" ng-style="{'background-color': 'rgb(' + rgb.red + ',' + rgb.green + ',' + rgb.blue +')'}"></div>
+            </div>
+        </div>
+        <div class="form-group">
+            <input type="button" class="btn btn-primary col-sm-6 col-sm-offset-3" ng-click="colorChange()" value="Ok" />
+        </div>
+    </form>
+
+
+</div>

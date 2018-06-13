@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>TechmerVision - TechmerPM, LLC. </title>
+    <link href="~/images/favicon11.png" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+   
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-8228429-4', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("TechmerVision", "Index", "Home", new { area = "" }, new { @class = "navbar-brand logoButton" })
+           
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse" href="../App/#/">Inspire</a></li>
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse" href="../App/#/compare">Compare</a></li>
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse" href="../App/#/visualization">Visualize</a></li>
+                    <li><a data-toggle="collapse" data-target=".navbar-collapse" href="../App/#/request">Request</a></li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+           
+            </div>
+
+        </div>
+    </div> 
+    <div class="container-fluid body-content fullheight" style="margin-top: 1%" id="view">
+        @RenderBody()
+        @RenderSection("SPAViews", required: false)
+  
+     <div class="httpprocess" id="processer">
+            <img src="../images/spinner.gif" />
+        </div>
+    </div>
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year Techmer PM, LLC.</p>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angular")
+    @RenderSection("Scripts", required: false)
+
+
+
+<script>
+    window.onload = function (e) {
+        jQuery("#processer").fadeOut();
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+﻿@{
+    if(Url.RequestContext.RouteData.Values["controller"].ToString().ToLower() == "home" &&
+        (Url.RequestContext.RouteData.Values["action"].ToString().ToLower().Equals("index") ||
+           Url.RequestContext.RouteData.Values["action"].ToString().ToLower().Equals("thankyou")))
+    {
+        Layout = "~/Views/Shared/_NoNav.cshtml";
+    } else {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}

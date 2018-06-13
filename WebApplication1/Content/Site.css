@@ -1,0 +1,401 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default 
+input,
+select,
+textarea {
+    max-width: 280px;
+}*/
+
+/* Set padding to display errors that occur during databinding */
+.padding-error {
+    padding-top: 20px;
+}
+
+@media only screen and (max-width: 767px) {
+    .nofloat {
+        float: none;
+        padding: 10px 15px;
+    }
+}
+
+.P-0 {
+    padding: 0 !important;
+}
+
+.sb-1px-ccc {
+ border: 1px solid #ccc;
+}
+
+.modal-xl {
+    width: 1300px !important;
+}
+
+.btn-request {
+    position: absolute;
+    right: 10px;
+    top: -36px;
+
+}
+.panel-body {
+    position: relative;
+}
+
+.httpprocess {
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.04);
+    z-index: 9999999;
+    top: 0px;
+}
+
+    .httpprocess img {
+        width: 54px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
+.pointer {
+    cursor:pointer;
+}
+.border {
+    border: 1px solid #ddd;
+}
+
+
+
+/* margin & padding  */
+
+.m-a {
+    margin: 1rem !important;
+}
+
+.m-t {
+    margin-top: 1rem !important;
+}
+
+.m-r {
+    margin-right: 1rem !important;
+}
+
+.m-b {
+    margin-bottom: 1rem !important;
+}
+
+.m-l {
+    margin-left: 1rem !important;
+}
+
+.m-x {
+    margin-right: 1rem !important;
+    margin-left: 1rem !important;
+}
+
+.m-y {
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.m-a-lg {
+    margin: 3rem !important;
+}
+
+.m-t-lg {
+    margin-top: 3rem !important;
+}
+
+.m-r-lg {
+    margin-right: 3rem !important;
+}
+
+.m-b-lg {
+    margin-bottom: 3rem !important;
+}
+
+.m-l-lg {
+    margin-left: 3rem !important;
+}
+
+.m-x-lg {
+    margin-right: 3rem !important;
+    margin-left: 3rem !important;
+}
+
+.m-y-lg {
+    margin-top: 3rem !important;
+    margin-bottom: 3rem !important;
+}
+
+.m-a-md {
+    margin: 1.5rem !important;
+}
+
+.m-t-md {
+    margin-top: 1.5rem !important;
+}
+
+.m-r-md {
+    margin-right: 1.5rem !important;
+}
+
+.m-b-md {
+    margin-bottom: 1.5rem !important;
+}
+
+.m-l-md {
+    margin-left: 1.5rem !important;
+}
+
+.m-x-md {
+    margin-right: 1.5rem !important;
+    margin-left: 1.5rem !important;
+}
+
+.m-y-md {
+    margin-top: 1.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.m-a-sm {
+    margin: 0.5rem !important;
+}
+
+.m-t-sm {
+    margin-top: 0.5rem !important;
+}
+
+.m-r-sm {
+    margin-right: 0.5rem !important;
+}
+
+.m-b-sm {
+    margin-bottom: 0.5rem !important;
+}
+
+.m-l-sm {
+    margin-left: 0.5rem !important;
+}
+
+.m-x-sm {
+    margin-right: 0.5rem !important;
+    margin-left: 0.5rem !important;
+}
+
+.m-y-sm {
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.m-a-xs {
+    margin: 0.25rem !important;
+}
+
+.m-t-xs {
+    margin-top: 0.25rem !important;
+}
+
+.m-r-xs {
+    margin-right: 0.25rem !important;
+}
+
+.m-b-xs {
+    margin-bottom: 0.25rem !important;
+}
+
+.m-l-xs {
+    margin-left: 0.25rem !important;
+}
+
+.m-x-xs {
+    margin-right: 0.25rem !important;
+    margin-left: 0.25rem !important;
+}
+
+.m-y-xs {
+    margin-top: 0.25rem !important;
+    margin-bottom: 0.25rem !important;
+}
+
+.p-a {
+    padding: 1rem !important;
+}
+
+.p-t {
+    padding-top: 1rem !important;
+}
+
+.p-r {
+    padding-right: 1rem !important;
+}
+
+.p-b {
+    padding-bottom: 1rem !important;
+}
+
+.p-l {
+    padding-left: 1rem !important;
+}
+
+.p-x {
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+}
+
+.p-y {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+}
+
+.p-a-lg {
+    padding: 3rem !important;
+}
+
+.p-t-lg {
+    padding-top: 3rem !important;
+}
+
+.p-r-lg {
+    padding-right: 3rem !important;
+}
+
+.p-b-lg {
+    padding-bottom: 3rem !important;
+}
+
+.p-l-lg {
+    padding-left: 3rem !important;
+}
+
+.p-x-lg {
+    padding-right: 3rem !important;
+    padding-left: 3rem !important;
+}
+
+.p-y-lg {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+}
+
+.p-a-md {
+    padding: 1.5rem !important;
+}
+
+.p-t-md {
+    padding-top: 1.5rem !important;
+}
+
+.p-r-md {
+    padding-right: 1.5rem !important;
+}
+
+.p-b-md {
+    padding-bottom: 1.5rem !important;
+}
+
+.p-l-md {
+    padding-left: 1.5rem !important;
+}
+
+.p-x-md {
+    padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;
+}
+
+.p-y-md {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+}
+
+.p-a-sm {
+    padding: 0.5rem !important;
+}
+
+.p-t-sm {
+    padding-top: 0.5rem !important;
+}
+
+.p-r-sm {
+    padding-right: 0.5rem !important;
+}
+
+.p-b-sm {
+    padding-bottom: 0.5rem !important;
+}
+
+.p-l-sm {
+    padding-left: 0.5rem !important;
+}
+
+.p-x-sm {
+    padding-right: 0.5rem !important;
+    padding-left: 0.5rem !important;
+}
+
+.p-y-sm {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+.p-a-xs {
+    padding: 0.25rem !important;
+}
+
+.p-t-xs {
+    padding-top: 0.25rem !important;
+}
+
+.p-r-xs {
+    padding-right: 0.25rem !important;
+}
+
+.p-b-xs {
+    padding-bottom: 0.25rem !important;
+}
+
+.p-l-xs {
+    padding-left: 0.25rem !important;
+}
+
+.p-x-xs {
+    padding-right: 0.25rem !important;
+    padding-left: 0.25rem !important;
+}
+
+.p-y-xs {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+}
+
+.padding {
+    padding: 1.5rem 1.5rem;
+}
+
+.margin {
+    margin-bottom: 1.5rem;
+}
+
+/* End margin & padding  */

@@ -1,0 +1,23 @@
+﻿
+<div class="well clearfix" style="display:flex;flex-direction:row;flex-wrap:wrap; justify-content:center; align-items:flex-start;align-content:flex-start">
+
+    <div style="margin:5px" ng-repeat="item in items | offset: currentPage*itemsPerPage | limitTo: itemsPerPage">
+        <a class="thumbnail" ng-click="selectItem(item)">
+            <img class="img-responsive" ng-src="{{item.image}}" style="max-height:100px" />
+        </a>
+    </div>
+</div>
+<div>
+    <ul class="pagination">
+        <li ng-class="prevPageDisabled()">
+            <a ng-click="prevPage()">« Prev</a>
+        </li>
+        <li ng-repeat="n in range()"
+            ng-class="{active: n == currentPage}" ng-click="setPage(n)">
+            <a>{{n+1}}</a>
+        </li>
+        <li ng-class="nextPageDisabled()">
+            <a ng-click="nextPage()">Next »</a>
+        </li>
+    </ul>
+</div>

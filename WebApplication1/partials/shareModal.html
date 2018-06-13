@@ -1,0 +1,83 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title">Sharing Details</h3>
+</div>
+<div id="" class="modal-body">
+    <div class="row">
+        <div class="col-sm-12" id="SharingDetails"></div>
+
+    </div>
+    <div class="row" style="height: 100%;">
+        <!--Preview Panel-->
+        <div class="col-sm-4">
+            <!--Image Preview-->
+            <div class="col-xs-12" style="min-height: 100px">
+                <img class="thumbnail img-responsive" style="max-height: 400px;" ng-src="{{selected.personalTemplates.hasBackgroundImage && selected.personalTemplates.backgroundImage || selected.personalTemplates.image}}" />
+            </div>
+            <!--./Image Preview-->
+            <!--Ok Button-->
+            <div class="col-xs-3 col-xs-offset-3">
+                <button class="btn btn-primary" type="button" ng-click="tblshare.$valid && ShareTemplate.ShareType > 0 && ShareNow()">OK</button>
+            </div>
+            <!--./Ok Button-->
+
+            <!--Cancel Button-->
+            <div class="col-xs-3">
+                <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+            </div>
+            <!--./Cancel Button-->
+        </div>
+        <!--./Preview Panel-->
+        <!--ImageSelector-->
+        <div class="col-sm-8 border">
+            <form class="form-horizontal" name="tblshare">
+                <h4>Share with someone new:</h4>
+                <div class="form-group mt-3">
+                    <label class="col-sm-3 control-label">Share Type:</label>
+                    <div class="col-sm-7">
+                        <select class="form-control banner-input" name="ShareType" id="SharedType" ng-model="ShareTemplate.ShareType" ng-init="ShareTemplate.ShareType='0'" required>
+                            <option value="0">Share Type</option>
+                            <option value="1">Person</option>
+                        </select>
+                        <span class="text-danger" ng-show="tblshare.$valid && ShareTemplate.ShareType == '0'">Please select share type.</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Email Address:</label>
+                    <div class="col-sm-7">
+                        <input type="email" name="email" class="form-control" ng-model="ShareTemplate.User" ng-pattern="/^[A-Za-z]+[A-Za-z0-9._]+@[A-Za-z]+\.[A-Za-z.]{2,5}$/" required />
+                        <span class="text-danger" ng-show="tblshare.email.$error.pattern">Invalid Email address.</span>
+                    </div>
+                </div>
+                <p>If sharing with an entire company you can use the following "*@companyname.com"</p>
+            </form>
+
+
+
+            <div class="col-sm-12 mt-3">
+                <div class="box">
+                    <div class="box-header">
+                        <p>Currently Share With</p>
+                    </div>
+                    <div class="box-body">
+                        <table class="table table-condensed table-responsive">
+                            <thead>
+                                <tr>
+                                    <th>Share Type</th>
+                                    <th>Email</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="ShareWith in currentlShareWith">
+                                    <td>{{ShareWith.assetType}}</td>
+                                    <td>{{ShareWith.userId}}</td>
+                                    <td ng-click="StopSharing(ShareWith)"><a class="pointer">Stop Sharing</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

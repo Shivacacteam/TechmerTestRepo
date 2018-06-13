@@ -1,0 +1,13 @@
+﻿<uib-accordion-group heading="Analyze Colors" is-open="isOpen">
+    <div class="col-sm-12 P-0">
+        <div class="col-sm-9 P-0">
+             <div ng-repeat="(key, value) in Analyze_Colors">
+                <span> {{key}} :  
+                 <span ng-if="key=='HEX'">{{value}} </span>
+                <span ng-if="key!='HEX'" >{{value.toString()}} </span></span>
+             </div>
+        </div>
+             <div class="col-sm-2 colorSelection" ng-style="{'background-color': 'rgb(' + Rgb.Red + ',' + Rgb.Green + ',' + Rgb.Blue +')'}"></div>
+    </div>
+</uib-accordion-group>
+
